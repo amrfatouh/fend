@@ -84,6 +84,18 @@ function toggleScrollToTop() {
   else scrollToTopBtn.style.opacity = "0";
 }
 
+// Collapsible sections
+function toggleSection(event) {
+  if (event.target.tagName === "H2" && event.target.getAttribute("data-parent") === "section") {
+    let h2 = event.target;
+    Array.from(h2.parentNode.children).forEach((child) => {
+      if (child.tagName !== "H2") {
+        child.classList.toggle("hidden");
+      }
+    });
+  }
+}
+
 /**
  * End Main Functions
  * Begin Events
@@ -109,3 +121,6 @@ document.addEventListener("scroll", () => {
 scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// Collapsible sections
+document.addEventListener("click", toggleSection);

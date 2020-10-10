@@ -133,6 +133,14 @@ section {
   text-align: left;
 }
 
+.landing__container h2 {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
 @media only screen and (min-width: 35em) {
   .landing__container {
     max-width: 50em;
